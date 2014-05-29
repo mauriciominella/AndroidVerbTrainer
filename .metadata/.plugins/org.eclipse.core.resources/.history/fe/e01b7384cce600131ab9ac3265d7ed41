@@ -1,0 +1,7 @@
+package com.bravi.capigoatverbtrainer.domain;
+
+public class VerbList {
+
+	List<Verb> list = new List<Verb>();		
+	
+}

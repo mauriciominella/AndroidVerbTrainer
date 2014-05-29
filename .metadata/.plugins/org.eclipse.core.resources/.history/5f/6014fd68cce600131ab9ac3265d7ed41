@@ -1,0 +1,5 @@
+package com.bravi.capigoatverbtrainer.domain;
+
+public class VerbList {
+
+}

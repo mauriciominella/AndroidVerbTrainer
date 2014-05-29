@@ -1,0 +1,8 @@
+package com.bravi.capigoatverbtrainer.domain;
+
+public class Verb {
+	public String infinitive;
+	public String simple;
+	public String participle;
+	
+}

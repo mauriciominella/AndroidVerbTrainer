@@ -1,0 +1,13 @@
+package com.bravi.capigoatverbtrainer.domain;
+import java.util.ArrayList;
+import java.util.List;
+
+public class VerbList {
+
+	List<Verb> list = new ArrayList<Verb>();		
+	
+	public void Load(){
+		
+	}
+	
+}
