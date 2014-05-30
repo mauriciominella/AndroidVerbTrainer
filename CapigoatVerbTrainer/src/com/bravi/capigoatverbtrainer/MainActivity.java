@@ -26,9 +26,9 @@ public class MainActivity extends ActionBarActivity {
         this.verbList.Load();
         
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
-                    .commit();
+            //getSupportFragmentManager().beginTransaction()
+                   // .add(R.id.container, new PlaceholderFragment())
+                   // .commit();
         }
         
     }

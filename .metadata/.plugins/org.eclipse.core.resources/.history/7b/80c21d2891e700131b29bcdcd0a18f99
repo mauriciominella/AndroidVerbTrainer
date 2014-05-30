@@ -1,0 +1,63 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.bravi.capigoatverbtrainer.MainActivity"
+    tools:ignore="MergeRootFrame" >
+
+    <RelativeLayout android:gravity="center_vertical">
+    <Button
+        android:id="@+id/btn_round1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_round1"
+        android:text="@string/Round1" />
+    
+    <Button
+        android:id="@+id/btn_round2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_round2"
+        android:text="@string/Round2" />
+    
+    <Button
+        android:id="@+id/btn_round3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_round3"
+        android:text="@string/Round3" />
+    
+        <Button
+        android:id="@+id/btn_round4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_round4"
+        android:text="@string/Round4" />
+        
+        
+        <Button
+        android:id="@+id/btn_round5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_round5"
+        android:text="@string/Round5" />
+        
+        
+        <Button
+        android:id="@+id/btn_round6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_round6"
+        android:text="@string/Round6" />
+        
+        
+        <Button
+        android:id="@+id/btn_round7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_round7"
+        android:text="@string/Round7" />
+</RelativeLayout>
+</FrameLayout>
+

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CapigoatVerbTrainer</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="Round1">Round 1</string>
+    <string name="hint_round1">Start round 1</string>
+    <string name="Round2">Round 2</string>
+    <string name="hint_round2">Start round 2</string>
+    <string name="Round3">Round 3</string>
+    <string name="hint_round3">Start round 3</string>
+    <string name="Round4">Round 4</string>
+    <string name="hint_round4">Start round 4</string>
+    <string name="Round5">Round 5</string>
+    <string name="hint_round5">Start round 5</string>
+    <string name="Round6">Round 6</string>
+    <string name="hint_round6">Start round 6</string>
+    <string name="Round7">Round 7</string>
+    <string name="hint_round7">Start round 7</string>
+
+</resources>
