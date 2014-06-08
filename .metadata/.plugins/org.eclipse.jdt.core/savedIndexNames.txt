@@ -1,5 +1,0 @@
-INDEX VERSION 1.126+C:\Git\AndroidVerbTrainer\.metadata\.plugins\org.eclipse.jdt.core
-1284074322.index
-3830531645.index
-1048622657.index
-4133194251.index
