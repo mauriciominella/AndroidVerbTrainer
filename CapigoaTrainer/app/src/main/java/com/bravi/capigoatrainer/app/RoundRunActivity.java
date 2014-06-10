@@ -4,6 +4,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import com.bravi.capigoatrainer.domain.RoundRunController;
 
 
 public class RoundRunActivity extends ActionBarActivity {
@@ -15,6 +18,12 @@ public class RoundRunActivity extends ActionBarActivity {
 
         Bundle b = getIntent().getExtras();
         int roundNumber = b.getInt(MainActivity.ROUND_NUMBER_KEY);
+
+        RoundRunController roundController = new RoundRunController(roundNumber);
+        roundController.Load();
+
+        TextView roundTitle = (TextView)findViewById(R.id.txtRoundRunTitle);
+        roundTitle.setText("Round " + Integer.toString(roundNumber));
     }
 
 

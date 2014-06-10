@@ -28,7 +28,32 @@ public class VerbList {
 
     //}
 
-    public void Load(){
+    public List<Verb> getVerbListByRound(int roundNumber){
+
+        this.loadFullVerbList();
+
+        switch (roundNumber) {
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+            case 7:
+                break;
+        }
+
+        return new ArrayList<Verb>();
+
+    }
+
+    public void loadFullVerbList(){
         list.add(new Verb("ask","asked","asked","Say something in order to obtain an answer or some information/ Say to (someone) that one wants them to do or give something"));
         list.add(new Verb("awake","awoke","awoken","Stop sleeping"));
         list.add(new Verb("be","was/were","been","Exist/ Occur; take place"));
