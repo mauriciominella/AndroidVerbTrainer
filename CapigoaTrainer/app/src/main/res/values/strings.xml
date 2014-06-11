@@ -19,5 +19,6 @@
     <string name="Round7">Round 7</string>
     <string name="hint_round7">Start round 7</string>
     <string name="title_activity_round_running">RoundRunning</string>
+    <string name="lbl_word">Word</string>
 
 </resources>
