@@ -9,7 +9,8 @@ import java.util.List;
 public class RoundRunController {
 
     private int roundNumber;
-    private List<RoundRunItem> roundVerbList = null;
+    private List<RoundRunItem> roundItems = null;
+
 
     /*Constructor*/
     public RoundRunController(){
@@ -19,7 +20,7 @@ public class RoundRunController {
     public void Start(int _roundNumber){
 
         this.roundNumber = _roundNumber;
-        this.roundVerbList = new ArrayList<RoundRunItem>();
+        this.roundItems = new ArrayList<RoundRunItem>();
 
         //Load the list of verbs
         VerbList verbList = new VerbList();
@@ -33,10 +34,14 @@ public class RoundRunController {
         List<Verb> roundVerbList = verbList.list.subList(roundInfo.getStartIndex(), roundInfo.getEndIndex());
 
         //Set the current initial verb
+        for(Verb verb : roundVerbList){
+            RoundRunItem item = new RoundRunItem(verb);
+            roundItems.add(item);
+        }
         //Set the current tense
     }
 
     public void Next(){
-
+        //
     }
 }

@@ -6,11 +6,12 @@ package com.bravi.capigoatrainer.domain;
 public class RoundRunItem {
 
     public RoundRunItem(Verb verb){
-
+        this.verb = verb;
+        this.userInput = new Verb();
     }
 
     private Verb verb = null;
-    private Verb userInput = new Verb();
+    private Verb userInput = null;
 
     public Verb getVerb() {
         return verb;
