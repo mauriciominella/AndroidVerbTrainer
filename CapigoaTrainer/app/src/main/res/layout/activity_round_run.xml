@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -6,35 +6,131 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context="com.bravi.capigoatrainer.app.RoundRunActivity">
 
+    <!-- Round Title Layout -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:id="@+id/txtRoundRunTitle"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:layout_centerHorizontal="true" />
+
+     </LinearLayout>
+
+    <!-- Word and Current Score Layout  -->
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_gravity="left">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/lbl_word"
             android:layout_gravity="left"
+            android:layout_weight="1"
             />
 
         <TextView
             android:id="@+id/txt_wordNumber"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="0/0"
+            />
+
+        <TextView
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
+            android:text="@string/lbl_score"
+            android:layout_weight="1"
+            android:gravity="right"
+            />
+
+        <TextView
+            android:id="@+id/txt_score"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="0/50"
             />
 
         </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
+        <!-- Infinitive Verb Layout -->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_infinitiveVerb"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Forgive"
+                android:gravity="center_horizontal"
+                />
+
+        </LinearLayout>
+
+    <!-- Current Verb tense Layout -->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txt_currentVerbTense"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Past Participle:"
+            android:gravity="center_horizontal"
+            />
+
+    </LinearLayout>
+
+    <!-- Verb input Layout -->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/txt_verbInput"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"/>
+
+    </LinearLayout>
+
+    <!-- Next button Layout -->
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text=""
-        android:id="@+id/txtRoundRunTitle"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="109dp" />
-</RelativeLayout>
+        android:gravity="center_horizontal">
+
+    <Button
+        android:id="@+id/btn_NextVerb"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_nextVerbText"
+        />
+
+    </LinearLayout>
+
+</LinearLayout>
+
+

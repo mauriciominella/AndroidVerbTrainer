@@ -23,7 +23,7 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         this.verbList = new VerbList();
-        this.verbList.Load();
+        this.verbList.loadFullVerbList();
 
         HookRoundButtonClickHandlers();
     }

@@ -20,7 +20,7 @@ public class RoundRunActivity extends ActionBarActivity {
         int roundNumber = b.getInt(MainActivity.ROUND_NUMBER_KEY);
 
         RoundRunController roundController = new RoundRunController(roundNumber);
-        roundController.Load();
+        roundController.Start();
 
         TextView roundTitle = (TextView)findViewById(R.id.txtRoundRunTitle);
         roundTitle.setText("Round " + Integer.toString(roundNumber));

@@ -9,17 +9,34 @@ import java.util.List;
 public class RoundRunController {
 
     private int roundNumber;
-    private List<RoundRunItem> roundVerList = null;
+    private List<RoundRunItem> roundVerbList = null;
 
     /*Constructor*/
-    public RoundRunController(int _roundNumber){
-        this.roundNumber = _roundNumber;
-        this.roundVerList = new ArrayList<RoundRunItem>();
+    public RoundRunController(){
+
     }
 
-    public void Load(){
+    public void Start(int _roundNumber){
 
+        this.roundNumber = _roundNumber;
+        this.roundVerbList = new ArrayList<RoundRunItem>();
 
+        //Load the list of verbs
+        VerbList verbList = new VerbList();
+        verbList.loadFullVerbList();
+
+        //Load the round info
+        RoundInfo roundInfo = new RoundInfo(this.roundNumber);
+        roundInfo.loadInfo();
+
+        //Select the verbs that belong to the current round
+        List<Verb> roundVerbList = verbList.list.subList(roundInfo.getStartIndex(), roundInfo.getEndIndex());
+
+        //Set the current initial verb
+        //Set the current tense
+    }
+
+    public void Next(){
 
     }
 }
