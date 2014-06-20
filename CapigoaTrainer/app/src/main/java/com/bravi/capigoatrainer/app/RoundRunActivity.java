@@ -28,21 +28,23 @@ public class RoundRunActivity extends ActionBarActivity {
         roundController = new RoundRunController();
         roundController.Start(roundNumber);
 
-        TextView roundTitle = (TextView)findViewById(R.id.txtRoundRunTitle);
-        roundTitle.setText("Round " + Integer.toString(roundNumber));
+        //TextView roundTitle = (TextView)findViewById(R.id.txtRoundRunTitle);
+        //roundTitle.setText("Round " + Integer.toString(roundNumber));
+
+       this.setTitle("Round " + Integer.toString(roundNumber));
 
         TextView wordNumber = (TextView)findViewById(R.id.txt_wordNumber);
-        wordNumber.setText(String.format("{0}/{1}"), roundController.getCurrentVerbNumber(), roundController.getVerbCount());
+        wordNumber.setText(String.format("%d/%d", roundController.getCurrentVerbNumber(), roundController.getVerbCount()));
 
 
         TextView score = (TextView)findViewById(R.id.txt_score);
-        score.setText(String.format("{0}%", roundController.getPercentScore()));
+        score.setText(Float.toString(roundController.getPercentScore()) + "%");
 
         TextView infinitiveVerb = (TextView)findViewById(R.id.txt_infinitiveVerb);
-        infinitiveVerb.setText(roundController.getCurrentVerb().infinitive);
+        infinitiveVerb.setText(roundController.getCurrentVerb().getVerb().infinitive);
 
         TextView currentVerbTense = (TextView)findViewById(R.id.txt_currentVerbTense);
-        currentVerbTense.setText(roundController.getCurrentRequiredTense());
+        currentVerbTense.setText(roundController.getCurrentVerbTense().getName());
 
         EditText verbInput = (EditText)findViewById(R.id.txt_verbInput);
 

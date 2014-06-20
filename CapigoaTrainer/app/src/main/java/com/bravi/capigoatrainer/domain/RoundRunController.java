@@ -12,6 +12,19 @@ public class RoundRunController {
     private List<RoundRunItem> roundItems = null;
 
 
+    //Verb Count
+    private int currentVerbNumber;
+    private int verbCount;
+
+    //Score
+    private float percentScore;
+
+    //Current Verb
+    private RoundRunItem currentVerb;
+
+    //Current Verb Tense
+    private VerbTense currentVerbTense;
+
     /*Constructor*/
     public RoundRunController(){
 
@@ -38,10 +51,46 @@ public class RoundRunController {
             RoundRunItem item = new RoundRunItem(verb);
             roundItems.add(item);
         }
-        //Set the current tense
+        //Set the current verb number
+        this.currentVerbNumber = 1;
+        this.verbCount = roundItems.size() + 1;
+
+        //Score
+        this.percentScore = 0;
+
+        //set the current verb
+        currentVerb = roundItems.get(currentVerbNumber - 1);
+
+        //set current verbTense
+        this.currentVerbTense = VerbTense.PastSimple;
     }
 
     public void Next(){
         //
     }
+
+    private void CalculatePercentScore(){
+
+    }
+
+    public int getCurrentVerbNumber() {
+        return currentVerbNumber;
+    }
+
+    public int getVerbCount() {
+        return verbCount;
+    }
+
+    public float getPercentScore() {
+        return percentScore;
+    }
+
+    public RoundRunItem getCurrentVerb() {
+        return currentVerb;
+    }
+
+    public VerbTense getCurrentVerbTense() {
+        return currentVerbTense;
+    }
 }
+
