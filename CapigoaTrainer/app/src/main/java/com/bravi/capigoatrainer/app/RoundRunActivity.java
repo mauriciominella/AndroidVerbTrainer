@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bravi.capigoatrainer.domain.RoundRunController;
 
@@ -15,6 +16,7 @@ import com.bravi.capigoatrainer.domain.RoundRunController;
 public class RoundRunActivity extends ActionBarActivity {
 
     RoundRunController roundController;
+    int roundNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,30 +25,15 @@ public class RoundRunActivity extends ActionBarActivity {
         setContentView(R.layout.activity_round_run);
 
         Bundle b = getIntent().getExtras();
-        int roundNumber = b.getInt(MainActivity.ROUND_NUMBER_KEY);
+        roundNumber = b.getInt(MainActivity.ROUND_NUMBER_KEY);
 
         roundController = new RoundRunController();
-        roundController.Start(roundNumber);
+        roundController.start(roundNumber);
 
         //TextView roundTitle = (TextView)findViewById(R.id.txtRoundRunTitle);
         //roundTitle.setText("Round " + Integer.toString(roundNumber));
 
-       this.setTitle("Round " + Integer.toString(roundNumber));
-
-        TextView wordNumber = (TextView)findViewById(R.id.txt_wordNumber);
-        wordNumber.setText(String.format("%d/%d", roundController.getCurrentVerbNumber(), roundController.getVerbCount()));
-
-
-        TextView score = (TextView)findViewById(R.id.txt_score);
-        score.setText(Float.toString(roundController.getPercentScore()) + "%");
-
-        TextView infinitiveVerb = (TextView)findViewById(R.id.txt_infinitiveVerb);
-        infinitiveVerb.setText(roundController.getCurrentVerb().getVerb().infinitive);
-
-        TextView currentVerbTense = (TextView)findViewById(R.id.txt_currentVerbTense);
-        currentVerbTense.setText(roundController.getCurrentVerbTense().getName());
-
-        EditText verbInput = (EditText)findViewById(R.id.txt_verbInput);
+        updateViewsValues();
 
         Button nextVerbButton = (Button)findViewById(R.id.btn_NextVerb);
         nextVerbButton.setOnClickListener(new View.OnClickListener() {
@@ -57,7 +44,36 @@ public class RoundRunActivity extends ActionBarActivity {
         });
     }
 
+    private void updateViewsValues() {
+        this.setTitle("Round " + Integer.toString(roundNumber));
+
+        TextView wordNumber = (TextView)findViewById(R.id.txt_wordNumber);
+        wordNumber.setText(String.format("%d/%d", roundController.getCurrentVerbNumber(), roundController.getVerbCount()));
+
+        TextView score = (TextView)findViewById(R.id.txt_score);
+        score.setText(Float.toString(roundController.getPercentScore()) + "%");
+
+        TextView infinitiveVerb = (TextView)findViewById(R.id.txt_infinitiveVerb);
+        infinitiveVerb.setText(roundController.getCurrentVerb().getVerb().infinitive);
+
+        TextView currentVerbTense = (TextView)findViewById(R.id.txt_currentVerbTense);
+        currentVerbTense.setText(roundController.getCurrentVerbTense().getName());
+    }
+
     private void HandleNextButtonClick() {
+
+        EditText verbInput = (EditText)findViewById(R.id.txt_verbInput);
+
+        if(verbInput.getText().length() == 0){
+            Toast.makeText(getApplicationContext(), "You should type a verb!",
+                    Toast.LENGTH_LONG).show();
+        }else{
+            roundController.next(verbInput.getText().toString());
+            verbInput.getText().clear();
+            this.updateViewsValues();
+
+        }
+
 
     }
 

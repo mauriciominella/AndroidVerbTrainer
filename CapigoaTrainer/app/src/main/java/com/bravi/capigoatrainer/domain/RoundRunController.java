@@ -11,6 +11,8 @@ public class RoundRunController {
     private int roundNumber;
     private List<RoundRunItem> roundItems = null;
 
+    //RoundInfo
+    RoundInfo roundInfo;
 
     //Verb Count
     private int currentVerbNumber;
@@ -30,7 +32,7 @@ public class RoundRunController {
 
     }
 
-    public void Start(int _roundNumber){
+    public void start(int _roundNumber){
 
         this.roundNumber = _roundNumber;
         this.roundItems = new ArrayList<RoundRunItem>();
@@ -40,7 +42,7 @@ public class RoundRunController {
         verbList.loadFullVerbList();
 
         //Load the round info
-        RoundInfo roundInfo = new RoundInfo(this.roundNumber);
+        roundInfo = new RoundInfo(this.roundNumber);
         roundInfo.loadInfo();
 
         //Select the verbs that belong to the current round
@@ -65,8 +67,35 @@ public class RoundRunController {
         this.currentVerbTense = VerbTense.PastSimple;
     }
 
-    public void Next(){
-        //
+    public void next(String userInput){
+
+        switch (this.currentVerbTense){
+            case Infinitive:
+                this.currentVerb.getVerb().infinitive = userInput;
+                this.currentVerbTense = VerbTense.PastSimple;
+                break;
+            case PastSimple:
+                this.currentVerb.getVerb().simple = userInput;
+                this.currentVerbTense = VerbTense.PastParticiple;
+                break;
+            case PastParticiple:
+
+                this.currentVerb.getVerb().participle = userInput;
+                this.currentVerbTense = VerbTense.PastSimple;
+                currentVerbNumber++;
+
+                if(roundInfo.getEndIndex() == currentVerbNumber){
+                    this.end();
+                }else{
+                    currentVerb = roundItems.get(currentVerbNumber - 1);
+                }
+
+                break;
+        }
+    }
+
+    private void end(){
+
     }
 
     private void CalculatePercentScore(){
