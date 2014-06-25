@@ -1,5 +1,6 @@
 package com.bravi.capigoatrainer.app;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bravi.capigoatrainer.domain.RoundRunController;
+import com.bravi.capigoatrainer.domain.RoundState;
 
 
 public class RoundRunActivity extends ActionBarActivity {
@@ -69,12 +71,32 @@ public class RoundRunActivity extends ActionBarActivity {
                     Toast.LENGTH_LONG).show();
         }else{
             roundController.next(verbInput.getText().toString());
-            verbInput.getText().clear();
+
+            RoundState currentRoundState = roundController.getCurrentState();
             this.updateViewsValues();
+
+            switch (currentRoundState){
+                case Running:
+                    verbInput.getText().clear();
+                    break;
+                case Finalised:
+                    this.goToRoundResults();
+                    break;
+            }
 
         }
 
 
+    }
+
+    private void goToRoundResults(){
+        Intent intent = new Intent(RoundRunActivity.this, RoundSummaryActivity.class);
+
+        //Bundle b = new Bundle();
+       // b.putInt(ROUND_NUMBER_KEY, roundNumber); //Your id
+        //intent.putExtras(b); //Put your id to your next Intent
+
+        RoundRunActivity.this.startActivity(intent);
     }
 
     @Override

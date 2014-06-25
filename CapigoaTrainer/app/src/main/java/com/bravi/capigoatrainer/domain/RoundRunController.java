@@ -27,6 +27,9 @@ public class RoundRunController {
     //Current Verb Tense
     private VerbTense currentVerbTense;
 
+    //Current Round State
+    private RoundState currentState;
+
     /*Constructor*/
     public RoundRunController(){
 
@@ -65,6 +68,8 @@ public class RoundRunController {
 
         //set current verbTense
         this.currentVerbTense = VerbTense.PastSimple;
+
+        currentState = RoundState.Running;
     }
 
     public void next(String userInput){
@@ -79,7 +84,6 @@ public class RoundRunController {
                 this.currentVerbTense = VerbTense.PastParticiple;
                 break;
             case PastParticiple:
-
                 this.currentVerb.getVerb().participle = userInput;
                 this.currentVerbTense = VerbTense.PastSimple;
                 currentVerbNumber++;
@@ -95,7 +99,7 @@ public class RoundRunController {
     }
 
     private void end(){
-
+        currentState = RoundState.Finalised;
     }
 
     private void CalculatePercentScore(){
@@ -120,6 +124,10 @@ public class RoundRunController {
 
     public VerbTense getCurrentVerbTense() {
         return currentVerbTense;
+    }
+
+    public RoundState getCurrentState() {
+        return currentState;
     }
 }
 

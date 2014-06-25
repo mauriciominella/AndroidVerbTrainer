@@ -22,5 +22,6 @@
     <string name="lbl_word">Word</string>
     <string name="lbl_score">Score</string>
     <string name="btn_nextVerbText">Next</string>
+    <string name="title_activity_round_summary">RoundSummaryActivity</string>
 
 </resources>
