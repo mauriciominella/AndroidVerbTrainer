@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#f4f4f4"
     tools:context="com.bravi.capigoatrainer.app.RoundRunActivity">
 
     <!-- Word and Current Score Layout  -->
@@ -10,7 +11,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="#1C546D"
+        android:paddingBottom="5pt"
+        android:background="@android:color/transparent"
         android:layout_gravity="left">
 
         <TextView
@@ -19,9 +21,7 @@
             android:text="@string/lbl_word"
             android:layout_gravity="left"
             android:layout_weight="1"
-            android:textSize="@dimen/abc_action_bar_title_text_size"
-            android:layout_marginTop="10pt"
-            android:textColor="#ffffff"
+            android:textSize="12pt"
             android:textStyle="bold"
             />
 
@@ -33,9 +33,7 @@
             android:layout_weight="1"
             android:gravity="left"
             android:text="0/0"
-            android:textSize="@dimen/abc_action_bar_title_text_size"
-            android:layout_margin="5pt"
-            android:textColor="#ffffff"
+            android:textSize="12pt"
             android:textStyle="bold"
             />
 
@@ -46,9 +44,7 @@
             android:text="@string/lbl_score"
             android:layout_weight="1"
             android:gravity="right"
-            android:textSize="@dimen/abc_action_bar_title_text_size"
-            android:layout_margin="5pt"
-            android:textColor="#ffffff"
+            android:textSize="12pt"
             android:textStyle="bold"
             />
 
@@ -58,11 +54,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:layout_weight="1"
-            android:gravity="left"
+            android:gravity="right"
             android:text="0/50"
-            android:layout_margin="5pt"
-            android:textSize="@dimen/abc_action_bar_title_text_size"
-            android:textColor="#ffffff"
+            android:textSize="12pt"
             android:textStyle="bold"
             />
 
@@ -71,7 +65,7 @@
         <!-- Infinitive Verb Layout -->
         <LinearLayout
             android:layout_width="fill_parent"
-            android:background="#ffffff"
+            android:paddingBottom="5pt"
             android:layout_height="wrap_content">
 
             <TextView
@@ -80,7 +74,7 @@
                 android:layout_height="wrap_content"
                 android:text="Forgive"
                 android:gravity="center_horizontal"
-                android:textSize="@dimen/abc_action_bar_title_text_size"
+                android:textSize="20pt"
                 />
 
         </LinearLayout>
@@ -89,7 +83,7 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="#ffffff"
+        android:paddingBottom="5pt"
         >
 
         <TextView
@@ -107,7 +101,7 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="#ffffff"
+        android:paddingBottom="5pt"
         >
 
         <EditText
@@ -129,6 +123,9 @@
         android:id="@+id/btn_NextVerb"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:background="#A9BB4D"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
         android:text="@string/btn_nextVerbText"
         />
 

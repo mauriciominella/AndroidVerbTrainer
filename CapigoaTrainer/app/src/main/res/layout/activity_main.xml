@@ -3,27 +3,54 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:gravity="center"
+    android:background="#f4f4f4"
     tools:context="com.bravi.capigoatrainer.app.MainActivity"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_round1"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_round1"
-        android:text="@string/Round1" />
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/btn_round2"
-        android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/btn_round1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/hint_round1"
+            android:textStyle="bold"
+            android:textSize="15pt"
+            android:textColor="#404040"
+            android:background="@android:color/transparent"
+            android:text="@string/Round1" />
+
+        <Button
+            android:id="@+id/btn_round2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textSize="15pt"
+            android:textColor="#404040"
+            android:background="@android:color/transparent"
+            android:hint="@string/hint_round2"
+            android:text="@string/Round2" />
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_round2"
-        android:text="@string/Round2" />
+        android:orientation="horizontal">
 
     <Button
         android:id="@+id/btn_round3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="15pt"
+        android:textColor="#404040"
+        android:background="@android:color/transparent"
         android:hint="@string/hint_round3"
         android:text="@string/Round3" />
 
@@ -31,14 +58,28 @@
         android:id="@+id/btn_round4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="15pt"
+        android:textColor="#404040"
+        android:background="@android:color/transparent"
         android:hint="@string/hint_round4"
         android:text="@string/Round4" />
 
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
     <Button
         android:id="@+id/btn_round5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="15pt"
+        android:textColor="#404040"
+        android:background="@android:color/transparent"
         android:hint="@string/hint_round5"
         android:text="@string/Round5" />
 
@@ -47,15 +88,31 @@
         android:id="@+id/btn_round6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="15pt"
+        android:textColor="#404040"
+        android:background="@android:color/transparent"
         android:hint="@string/hint_round6"
         android:text="@string/Round6" />
 
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
 
     <Button
         android:id="@+id/btn_round7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="15pt"
+        android:textColor="#404040"
+        android:background="@android:color/transparent"
         android:hint="@string/hint_round7"
         android:text="@string/Round7" />
 
+     </LinearLayout>
 </LinearLayout>
